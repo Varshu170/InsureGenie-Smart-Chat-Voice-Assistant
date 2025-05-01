@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeGuard Health Insurance</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="boxicons-2.0.9/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static/css/style.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <style>
+        .showcase{
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../static/images/background.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 100vh;
+}
+
+    </style>
+</head>
+<body id="home">
+
+    <div class="scroll-up-btn">
+        <i class="bx bx-up-arrow-alt bx-sm"></i>
+    </div>
+    <div class="showcase">
+        <!-- navbar top section -->
+
+        <div class="navbar-top">
+            <ul class="left">
+                <li><a href="#">India</a></li>
+                <li><a href="#"><i class="bx bxs-time bx-xs"></i> Mon - sat: 8:00 - 10:00</a></li>
+                <li><a href="#"><i class="bx bxs-map bx-xs"></i> Chennai, Tamil Nadu</a></li>
+                <li><a href="#"><i class="bx bxs-phone bx-xs"></i> +91 12345 67890</a></li>
+            </ul>
+            <ul class="right">
+                <li><a href="#"><i class="bx bxl-twitter bx-xs"></i></a></li>
+                <li><a href="#"><i class="bx bxl-pinterest-alt bx-xs"></i></a></li>
+                <li><a href="#"><i class="bx bxl-facebook bx-xs"></i></a></li>
+                <li><a href="#"><i class="bx bxl-instagram-alt bx-xs"></i></a></li>
+            </ul>
+        </div>
+
+        <!-- navbar bottom section -->
+       <div class="navbar-bottom">
+            <a href="#home" class="brand-left">LifeGuard</a>
+            <ul class="menu-right">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#About_us">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#need">Need</a></li>
+                <li><a href="#claims">Claims</a></li>
+                <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('voice') }}">Voice Assist</a>
+                    </li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#"><i class="bx bx-search bx-sm" id="search-btn"></i></a></li>
+            </ul>
+            <div class="search-form">
+                <input type="search" name="search-box" id="search-box" placeholder="search here...">
+                <label for="search-box" class="bx bx-search bx-sm"></label>
+            </div>
+       </div>
+
+       <!-- Showcase content Section -->
+       <div class="showcase-content">
+           <h1>The greatest wealth<br>is Health </h1>
+           <p>Securing a health insurance plan ensures your shield against unforeseen <br> medical bills, offering a safety net for your finances</p>
+           <a href="#" class="btn btn-left">EXPLORE MORE</a>
+           <a href="#" class="btn btn-right">GET IN TOUCH</a>
+       </div>
+    </div>
+
+    <!-- Services / Goal Section  -->
+
+    <section id="services" class="bg-light py-3">
+        <div class="wrapper">
+            <div class="items">
+                <div class="item">
+                    <i class="bx bx-male bx-lg"></i>
+                    <h3>Family Plans</h3>
+                    <p>Health Insurance that covers your loved ones.</p>
+                </div>
+                <div class="item">
+                    <i class="bx bx-health bx-lg"></i>
+                    <h3>Senior Citizens</h3>
+                    <p>Your Parents have always cared for you, now it's your turn.</p>
+                </div>
+                <div class="item">
+                    <i class="bx bx-female bx-lg"></i>
+                    <h3>Maternity Plans</h3>
+                    <p>Insurance for maternity offers safety net for expecting mother and their newborn babies. </p>
+                </div>
+                <div class="item">
+                    <i class="bx bxs-badge-dollar bx-lg"></i>
+                    <h3>1 CRORE Health Plan</h3>
+                    <p>Health Insurance with higher sum insured.</p>
+                </div>
+            </div>
+            <div id="goal" class="goal">
+                <div class="goal-img">
+                    <img src="/static/images/photo1.jpg">
+                </div>
+                <div class="goal-text">
+                    <a href="#">Our Priorities</a>
+                    <h2>HealthCare <br> Capital Solutions</h2>
+                    <div class="contents">
+                        <div class="content p-4">
+                            <i class="bx bx-check bx-sm"></i>
+                        </div>
+                        <div class="content p-4">
+                            <h3>Investment Management</h3>
+                            <p>Prioritize plans that balance comprehensive coverage with cost-effectiveness,  <br>while considering the financial stability of the insurer.</p>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <div class="content p-4">
+                            <i class="bx bx-check bx-sm"></i>
+                        </div>
+                        <div class="content p-4">
+                            <h3>Private Credit & Equity</h3>
+                            <p>innovation to maximize returns and ensure sustainable,  <br>high-quality healthcare provision within health insurance companies.</p>
+                        </div>
+                    </div>
+                    <div class="contents">
+                        <div class="content p-4">
+                            <i class="bx bx-check bx-sm"></i>
+                        </div>
+                        <div class="content p-4">
+                            <h3>Business Multi Solutions</h3>
+                            <p>access to a wide network of healthcare providers and robust wellness <br>programs to support employee health and productivity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio py-3">
+        <h3 class="text-center">Company Portfolio</h3>
+        <h2 class="text-center">Our Latest <span class="text-secondary">Case Studies</span> </h2>
+        <p class="text-center">We help you see the world differently, discover opportunities you may never have <br> imagined and achieve results that bridge what is with what can be</p>
+        <div class="owl-carousel">
+            <div class="item"><img src="./static/images/photo2.jpg"></div>
+            <div class="item"><img src="./static/images/photo3.jpg"></div>
+            <div class="item"><img src="./static/images/photo4.jpg"></div>
+            <div class="item"><img src="./static/images/photo5.jpg"></div>
+            <div class="item"><img src="./static/images/photo6.jpg"></div>
+            <div class="item"><img src="./static/images/photo7.jpg"></div>
+            <div class="item"><img src="./static/images/photo8.jpg"></div>
+            <div class="item"><img src="./static/images/photo9.jpg"></div>
+            <div class="item"><img src="./static/images/photo10.jpg"></div>
+            <div class="item"><img src="./static/images/photo11.jpg"></div>
+            <div class="item"><img src="./static/images/photo12.jpg"></div>
+            <div class="item"><img src="./static/images/photo13.jpg"></div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="teams" class="teams bg-light py-3">
+        <h3 class="text-center">We are there for you</h3>
+        <h2 class="text-center">Need for <span class="text-secondary">Health Insurance</span></h2>
+        <p class="text-center">We help you see the world differently, discover opportunities you may never have <br> imagined and achieve results that bridge what is with what can be</p>
+        <div class="wrapper">
+            <div class="card-items">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/static/images/1.png">
+                    </div>
+                    <div class="card-body">
+                        <h3>Shield Against <br>Healthcare inflation</h3>
+                        <h4>It cover lowers the financial burden by covering medical treatment.</h4>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/static/images/2.png">
+                    </div>
+                    <div class="card-body">
+                        <h3>Covers Ambulance Expenses</h3>
+                        <h4>you need not worry at all about an emergency transit to a hospital.</h4>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/static/images/3.png">
+                    </div>
+                    <div class="card-body">
+                        <h3>Relief Amid Chronic Illnesses</h3>
+                        <h4>This coverage helps you bear the treatment cost of prolonged illnesses.</h4>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/static/images/4.png">
+                    </div>
+                    <div class="card-body">
+                        <h3>Provides Cashless Treatment</h3>
+                        <h4>You can access cashless treatment without having to file a claim.</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section id="blog" class="blog py-3">
+        <div class="wrapper">
+            <div class="header">
+                <span></span>
+                <h4>Business Blog</h4>
+            </div>
+            <div class="blog-info">
+                <h2>Procedure for <span class="text-secondary">Claims</span></h2>
+                <a href="#">view all</a>
+            </div>
+            <div class="blog-card">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/static/images/7.webp">
+                    </div>
+                    <div class="card-body">
+                        <span class="tag tag-yellow">Cashless</span>
+                        <h4>Cashless Claims' <br> Time has come</h4>
+                        <div class="footer">
+                            <p>Visit network Hospitals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/static/images/6.jpg">
+                    </div>
+                    <div class="card-body">
+                        <span class="tag tag-purple">Reimbursement</span>
+                        <h4>Undergo Treatment <br> & make the payment</h4>
+                        <div class="footer">
+                            <p>Submit your original docs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="/static/images/8.png">
+                    </div>
+                    <div class="card-body">
+                        <span class="tag tag-pink">Initmation</span>
+                        <h4>Claim Intimation </h4>
+                        <div class="footer">
+                            <p>Initiate your claim with few details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="contact" class="contact bg-secondary py-3">
+        <h2 class="text-center">Subscribe To Our Newsletter</h2>
+        <p class="text-center">Stay informed and protected! Subscribe to our newsletter for the latest insights, tips, and <br>updates on navigating the world of health insurance with confidence.</p>
+        <div class="wrapper">
+            <form class="text-center">
+                <input type="email" name="email" id="email" placeholder="Enter Email Address">
+                <button class="button">Submit</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-bottom py-3 text-center">
+        <p>Copyright &copy; 2024  All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="static/js/app.js"></script>
+    <script>
+window.embeddedChatbotConfig = {
+chatbotId: "kkUNvR-dZhwkk-O--yQlR",
+domain: "www.chatbase.co"
+}
+</script>
+<script
+src="https://www.chatbase.co/embed.min.js"
+chatbotId="kkUNvR-dZhwkk-O--yQlR"
+domain="www.chatbase.co"
+defer>
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

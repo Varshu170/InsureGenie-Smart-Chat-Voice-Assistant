@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .search-bar-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-box {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .voice-icon {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .voice-icon img {
+            width: 24px;
+            height: 24px;
+        }
+        .response-container {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .language-container {
+            margin-bottom: 20px;
+        }
+        .speak-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .voice-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.voice-icon i {
+    font-size: 24px; /* Adjust the size as needed */
+    color: #000; /* Adjust the color as needed */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Container for language selection -->
+    <div class="container">
+        <h1>Voice Assistant</h1>
+        <div class="language-container">
+            <label>Select Language:</label>
+            <input type="radio" id="english" name="language" value="en" checked>
+            <label for="english">English</label>
+            <input type="radio" id="hindi" name="language" value="hi">
+            <label for="hindi">Hindi</label>
+            <input type="radio" id="tamil" name="language" value="ta">
+            <label for="tamil">Tamil</label>
+        </div>
+
+
+        <!-- Existing search bar and voice icon -->
+        <div class="search-bar-container">
+            <input type="text" id="search-box" class="search-box" placeholder="Type or speak your query...">
+            <button id="voice-input-button" class="voice-icon">
+    <i class="fas fa-microphone"></i> <!-- Font Awesome icon -->
+</button>
+
+        </div>
+
+        <div id="response-container" class="response-container"></div>
+    </div>
+
+    <!-- JavaScript for speech recognition -->
+    <script>
+        document.getElementById('voice-input-button').addEventListener('click', function () {
+            startVoiceRecognition();
+        });
+
+        document.getElementById('speak-button').addEventListener('click', function () {
+            startVoiceRecognition();
+        });
+
+        function startVoiceRecognition() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = getSelectedLanguage();
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = function() {
+                console.log('Voice recognition started. Speak now.');
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                console.log('Voice recognition result:', transcript);
+                document.getElementById('search-box').value = transcript;
+                sendQueryToServer(transcript);
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Voice recognition error:', event.error);
+                displayResponse('Error: ' + event.error);
+            };
+
+            recognition.onend = function() {
+                console.log('Voice recognition ended.');
+            };
+
+            recognition.start();
+        }
+
+        function getSelectedLanguage() {
+            const radios = document.getElementsByName('language');
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    return radios[i].value;
+                }
+            }
+            return 'en'; // Default to English if no option is selected
+        }
+
+        function sendQueryToServer(query) {
+            fetch('/process_query', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: query })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Server response:', data);
+                displayResponse(data.response);
+            })
+            .catch(error => {
+                console.error('Error sending query:', error);
+                displayResponse('Error: ' + error);
+            });
+        }
+
+        function displayResponse(response) {
+            const responseContainer = document.getElementById('response-container');
+            responseContainer.textContent = response;
+        }
+    </script>
+<script src="voice-input.js"></script>
+</body>
+</html>
