@@ -1,0 +1,24 @@
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "keywords": ["hello", "hi", "hey"],
+      "responses": ["Hello! How can I help you?"]
+    },
+    {
+      "name": "insurance",
+      "keywords": ["is there any insurance available", "what are the plans"],
+      "responses": ["We provide family plans, senior citizens, maternity plans."]
+    },
+    {
+      "name": "need",
+      "keywords": ["what are its needs", "needs for health insurance"],
+      "responses": ["It provides shield against health inflation,covers ambulance expenses,provides cashless treatment and relief amid chronic illnesses. "]
+    },
+    {
+      "name": "claims",
+      "keywords":  ["what are the claims available", "process for claims"],
+      "responses": ["There are two types of claims: one is cashless and other is reimbursement."]
+    }
+  ]
+}

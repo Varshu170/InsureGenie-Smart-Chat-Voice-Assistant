@@ -1,0 +1,415 @@
+version: "3.1"
+
+intents:
+  - greet
+  - mood_great
+  - goodbye
+  - fallback_gibberish
+  - thanks
+  - mood_unhappy
+  - affirm
+  - deny
+  - bot_challenge
+  - add_account
+  - add_feedback
+  - my_name:
+      use_entities:
+        - name
+  - email:
+      use_entities:
+        - mail
+  - r_address:
+      use_entities:
+        - address
+  - phone:
+      use_entities:
+        - number
+  - U_age:
+      use_entities:
+        - age
+  - U_sex:
+      use_entities:
+        - sex
+  - U_bmi:
+      use_entities:
+        - bmi
+  - U_n_child:
+      use_entities:
+        - child
+  - smoker_or_no:
+      use_entities:
+        - smoker
+  - f_id:
+      use_entities:
+        - id
+  - f_comp:
+      use_entities:
+        - comp
+  - f_feed:
+      use_entities:
+        - feed
+  - fetch_id:
+      use_entities:
+        - fall
+  - i_poli:
+      use_entities:
+        - poli
+  - policy_details
+  - lic_policy
+  - star_insurance
+  - bajaj_insurance
+  - hdfc_insurance
+  - recommend_me
+  - top_companies
+  - premium_pred
+  - prob_cancer
+  - prob_hiv
+  - add_policy
+
+
+
+entities:
+  - name
+  - mail
+  - address
+  - number
+  - age
+  - sex
+  - bmi
+  - child
+  - smoker
+  - id
+  - comp
+  - feed
+  - fall
+  - poli
+
+slots:
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+
+  mail:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mail
+
+  address:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: address
+
+  number:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: number
+
+  age:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: age
+
+  sex:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: sex
+
+  bmi:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: bmi
+
+  child:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: child
+
+  smoker:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: smoker
+
+  id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: id
+
+  comp:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: comp
+
+  feed:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: feed
+
+  fall:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: fall
+
+  poli:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: poli
+
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+
+  utter_goodbye:
+    - text: "Goodbye! If you have any more questions, feel free to ask."
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_ask_name:
+    - text: "To add your account please provide your name ?"
+
+  utter_ask_mail:
+    - text: "What is your Email address?"
+
+  utter_ask_address:
+    - text: "What is your Residential address?"
+
+  utter_ask_number:
+    - text: "What is your mobile number?"
+
+  utter_ask_age:
+    - text: "What is your age?(X years old)"
+
+  utter_ask_sex:
+    - text: "Enter your sex (male or female)"
+
+  utter_ask_bmi:
+    - text: "What is your body mass index?  (for calculating this (your weight in kg)/(your height in meters)*(your height in meters))"
+
+  utter_ask_child:
+    - text: "How many children you have?(x children)"
+
+  utter_ask_smoker:
+    - text: "Will you smoke or no? (Yes or no)"
+
+  utter_ask_id:
+    - text: "What is your account id(my id is xyz)"
+
+  utter_ask_comp:
+    - text: "For which company you want to add your feedback?"
+
+  utter_ask_feed:
+    - text: "Whats your feedback?"
+
+  utter_ask_poli:
+    - text: "What policy you want to add?"
+
+  utter_add_thanks:
+    - text: |
+        Thanks for adding account 
+        
+        Name: {Name}, 
+        
+        Email: {E_mail}, 
+        
+        Address: {Address}, 
+        
+        Mobile Number: {Mobile_number}, 
+        
+        Your id is: {Rand}
+
+  utter_message:
+    - text: "{mess}"
+
+  utter_add_feed_thanks:
+    - text: "Thanks for adding feedback \nId: {Id}, \nCompany name: {C_name}, \nFeedback: {F_back}"
+
+  utter_top_companies:
+    - text: |
+        Top companies are: 
+        HDFC Ergo Health Insurance: Health Claim Settlement Ratio of 100%, 
+        LIC jeevan arogya: LIC has many policies for customers, 
+        Star Insurance: cost for healthcheck up is free
+
+  utter_companies:
+    - text: "The companies you can search for: \n->LIC life Insurance \n->Star Insurance \n->Bajaj Insurance \n->HDFC Ergo Health Insurance"
+
+  utter_lic_policy:
+    - text: |
+        The lic policies are 
+        
+        ->Lic  cancer cover
+        
+        ->Lic Arogya rakshak
+
+  utter_star_insurance:
+    - text: |
+        The star insurance policies are 
+        
+        ->Star Comprehensive Insurance
+        
+        ->Family Health Optima
+        
+        ->Outpatient care insurance policy
+        
+        ->Arogya Sanjeevani Policy
+        
+        ->Star Super Surplus Insurance
+        
+        ->Comprehensive
+        
+        ->Critical illness insurance
+        
+        ->Hospital Cash Health Insurance Plan
+        
+        ->Mediclaim policy
+        
+        ->Star Cancer Care Gold
+        
+        ->Star Micro Rural and Farmers Care
+
+  utter_bajaj_insurance:
+    - text: |
+        The Bajaj insurance policies are
+        
+        ->Individual Health Insurance
+        
+        ->Family Health Insurance
+        
+        ->Health Insurance for Senior Citizens
+        
+        ->Critical Illness Insurance
+        
+        ->Critical Illness Insurance for Women
+        
+        ->Top-Up Health Insurance
+        
+        ->Personal Accident Insurance
+        
+        ->Group Health Insurance
+        
+        ->Health Insurance for Vector-borne Diseases
+
+  utter_hdfc_insurance:
+    - text: |
+        The hdfc insurance policies are
+        
+        ->HDFC Life Group Poorna Suraksha
+        
+        ->HDFC Group Term Insurance
+        
+        ->HDFC Life Saral Jeevan Bima
+        
+        ->Life Protect Plus rider
+        
+        ->HDFC Life Group Credit Protect Plus Insurance Plan
+
+  utter_recommend_me:
+    - text: "To recommend the policy we need some information about you"
+
+  utter_predicted_premium:
+    - text: "Your predicted premium is {P_prem}"
+
+  utter_premium_pred:
+    - text: "To predict the premium we need some information about you"
+
+  utter_thanks:
+    - text: "Anything i can help you with?:)"
+
+  utter_id:
+    - text: "hello how can i help u with?"
+
+  utter_default:
+    - text: "I'm sorry, I didn't understand that. Can you please rephrase?"
+    - text: "Can you rephrase the message :("
+
+  utter_add_poli_thanks:
+    - text: |
+        Thanks for adding policy 
+        
+        Policy type: {policy} 
+        
+        Id: {ID}
+
+  utter_any_prob:
+    - text: "Do you have any health issues?"
+
+  utter_what_prob:
+    - text: "what is the health issue you got?"
+
+
+  utter_cancer_policy:
+    - text: |
+        Sorry to hear that..You can go for
+
+        -> LIC Cancer cover
+
+        -> Star cancer care gold
+  utter_hiv_policy:
+    - text: |
+        Sorry to hear that.. I recommend you to go for
+        -> Critical Illness Insurance from star insurance
+
+actions:
+  - action_submit
+  - action_submit_pre
+  - action_submit_feed
+  - action_get_name
+  - action_fallback_gibberish
+  - action_poli_form
+  - validate_user_details_form
+
+forms:
+  user_details_form:
+    required_slots:
+        - name
+        - mail
+        - address
+        - number
+
+  premium_pred_form:
+    required_slots:
+        - age
+        - sex
+        - bmi
+        - child
+        - smoker
+
+  feedback_form:
+    required_slots:
+        - id
+        - comp
+        - feed
+
+  poli_form:
+    required_slots:
+        - poli
+        - id
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

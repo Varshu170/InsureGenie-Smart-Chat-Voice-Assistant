@@ -1,0 +1,30 @@
+{
+  "intents": [
+    {
+      "name": "Greeting in Hindi",
+      "keywords": ["namasthe", "namaste"],
+      "responses": ["नमस्ते! मैं आपकी कैसे मदद कर सकता हूँ"]
+    },
+    {
+      "name": "About me in Hindi",
+      "keywords": [
+        "kon hai thum", "kaun hai tum","Tere bare meh bolo","there bare meh bolo","tum kaun ho","Mujhe Apne bare mein batao"],
+      "responses": [
+        "मैं एक चैटबॉट हूं। हमारे द्वारा प्रदान किए जाने वाले स्वास्थ्य बीमा के बारे में मुझे कुछ बुनियादी जानकारी है।"
+      ]
+    },
+    {
+      "name": "weather",
+      "keywords": ["weather", "forecast"],
+      "responses": ["இன்றைய வானிலை வெயிலாக இருக்கிறது."]
+    },
+    {
+      "name": "time",
+      "keywords": ["time", "current time"],
+      "responses": {
+        "en": ["The current time is 2:00 PM."],
+        "ta": ["தற்காலிக நேரம் பதினான்கு மணி நேரம் ஆகும்."]
+      }
+    }
+  ]
+}

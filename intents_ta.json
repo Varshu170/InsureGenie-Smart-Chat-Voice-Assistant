@@ -1,0 +1,38 @@
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "keywords": ["vanakkam", "halo"],
+      "responses": ["வணக்கம்! நான் உங்களுக்கு எப்படி உதவ முடியும்?"]
+    },
+    {
+      "name": "About me in Tamil",
+      "keywords": [
+        "Nee yaaru", "unna pathi sollu","unna p=ati sollu"],
+      "responses": [
+        "நான் ஒரு சாட்போட். நாங்கள் வழங்கும் ஹெல்த் இன்சூரன்ஸ் பற்றி எனக்கு சில அடிப்படை அறிவு உள்ளது."
+      ]
+    },
+    {
+      "name": "thanks",
+      "keywords": ["Nandri"],
+      "responses": ["நன்றி! மீண்டும் வருக"]
+    },
+    {
+      "name": "insurance",
+      "keywords": ["edhavadhu insurance irukudha","edhavadhu insurance irukiradha","edhadhu insurance irukiradha", "edhadhu insurance irukudha","enna enna vidhigal ulladhu"],
+      "responses": ["நாங்கள் குடும்பத் திட்டங்கள், மூத்த குடிமக்கள், மகப்பேறு திட்டங்களை வழங்குகிறோம்."]
+    },
+    {
+      "name": "need",
+      "keywords": ["thevaigal enna", "maruthuva kaapidukana thevai enna"],
+      "responses": ["இது சுகாதார பணவீக்கத்திற்கு எதிராக கவசத்தை வழங்குகிறது, ஆம்புலன்ஸ் செலவுகளை உள்ளடக்குகிறது, நாள்பட்ட நோய்களுக்கு மத்தியில் பணமில்லா சிகிச்சை மற்றும் நிவாரணத்தை வழங்குகிறது. "]
+    },
+    {
+      "name": "claims",
+      "keywords":  ["enna enna urimai korikkaigal ulladhu", "urimai korikaigalin seiyalmurai"],
+      "responses": ["இரண்டு வகையான உரிமைகோரிக்கைகள் உள்ளன: ஒன்று பணமில்லாது மற்றும் மற்றொன்று திருப்பிச் செலுத்துதல்."]
+    }
+
+  ]
+}

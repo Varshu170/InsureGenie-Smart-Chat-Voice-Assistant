@@ -1,0 +1,24 @@
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "keywords": ["namaste", "Halo", "namaskar"],
+      "responses": ["नमस्ते! क्या मैं आपकी सहायता कर सकता हूँ?"]
+    },
+    {
+      "name": "thanks",
+      "keywords": ["dhanyavaadh", "dhanyvad"],
+      "responses": ["आपका धन्यवाद!"]
+    },
+    {
+      "name": "goodbye",
+      "keywords": ["FIR milenge"],
+      "responses": ["अलविदा! ध्यान रखें।"]
+    },
+    {
+      "name": "time",
+      "keywords": [" kya koi Bima uplabdh hai", "abhi samay kya hai"],
+      "responses": ["वर्तमान समय है {current_time}।"]
+    }
+  ]
+}
